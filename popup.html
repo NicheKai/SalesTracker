@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sales Tracker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div class="logo-text">CHAT<em>TRACKER</em></div>
+      <button class="theme-toggle" id="themeToggle" title="Customise theme">⬡</button>
+    </header>
+
+    <!-- Theme panel (hidden by default) -->
+    <div class="theme-panel" id="themePanel">
+      <div class="theme-panel-label">PICK A COLOUR</div>
+      <div class="theme-row">
+        <input type="color" id="colourPicker" class="colour-picker" value="#e60000" />
+        <div class="theme-presets" id="presets">
+          <button class="preset" data-colour="#e60000" style="background:#e60000" title="Vodafone Red"></button>
+          <button class="preset" data-colour="#0070f3" style="background:#0070f3" title="Electric Blue"></button>
+          <button class="preset" data-colour="#7c3aed" style="background:#7c3aed" title="Purple"></button>
+          <button class="preset" data-colour="#059669" style="background:#059669" title="Emerald"></button>
+          <button class="preset" data-colour="#d97706" style="background:#d97706" title="Amber"></button>
+          <button class="preset" data-colour="#db2777" style="background:#db2777" title="Pink"></button>
+        </div>
+      </div>
+      <div class="theme-preview-swatches" id="swatchRow"></div>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-card" id="chatCard">
+        <div class="stat-label">CHATS</div>
+        <div class="stat-value" id="chatCount">0</div>
+        <div class="stat-controls">
+          <button class="btn-minus" data-type="chat">−</button>
+          <button class="btn-plus" data-type="chat">+</button>
+        </div>
+      </div>
+      <div class="stat-card accent" id="saleCard">
+        <div class="stat-label">SALES</div>
+        <div class="stat-value" id="saleCount">0</div>
+        <div class="stat-controls">
+          <button class="btn-minus" data-type="sale">−</button>
+          <button class="btn-plus" data-type="sale">+</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="conversion-bar">
+      <div class="conversion-label">CONVERSION</div>
+      <div class="conversion-display">
+        <div class="conversion-track">
+          <div class="conversion-fill" id="conversionFill"></div>
+        </div>
+        <div class="conversion-pct" id="conversionPct">0%</div>
+      </div>
+    </div>
+
+    <div class="update-section">
+      <div class="update-label">UPDATES</div>
+      <div class="update-preview">
+        <span class="preview-line" id="previewTime">@—</span>
+        <span class="preview-line" id="previewChats">0 chats</span>
+        <span class="preview-line" id="previewSales">0 sales</span>
+        <span class="preview-line" id="previewPct">0%</span>
+      </div>
+      <button class="copy-btn" id="copyBtn">
+        <span class="copy-text">COPY UPDATE</span>
+      </button>
+      <div class="copy-feedback" id="copyFeedback">Copied to clipboard!</div>
+    </div>
+
+    <button class="reset-btn" id="resetBtn">↺ Reset all</button>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
