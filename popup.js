@@ -122,14 +122,13 @@ function getConversionPct() {
 
 function getBiHourlyTime() {
   const h = new Date().getHours();
-  let btemp = `@${Math.floor(h / 2) * 2}`;
   let hammend;
-  if (btemp > 12) {
-    hammend = (btemp - 12)
+  if (h >= 14) {
+    hammend = (h - 12)
   } else {
-    hammend = (btemp)
+    hammend = (h)
   }
-  return btemp;
+  return `@${Math.floor(hammend / 2) * 2}`;
 }
 
 function formatUpdate() {
